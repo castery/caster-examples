@@ -1,0 +1,30 @@
+{
+    "name": "vk-bot",
+    "version": "0.0.0",
+    "private": "true",
+    "description": "Simple bot for group VK",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/castery/caster-examples.git"
+    },
+    "keywords": [
+        "vk",
+        "bot",
+        "caster",
+        "caster-vk"
+    ],
+    "author": "https://github.com/negezor",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/castery/caster-examples/issues"
+    },
+    "homepage": "https://github.com/castery/caster-examples#readme",
+    "dependencies": {
+        "@castery/caster": "^0.0.11",
+        "@castery/caster-vk": "^0.0.4"
+    }
+}
