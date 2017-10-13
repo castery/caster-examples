@@ -24,7 +24,7 @@
     },
     "homepage": "https://github.com/castery/caster-examples#readme",
     "dependencies": {
-        "@castery/caster": "^0.0.11",
-        "@castery/caster-vk": "^0.0.4"
+        "@castery/caster": "^0.0.12",
+        "@castery/caster-vk": "^0.0.6"
     }
 }

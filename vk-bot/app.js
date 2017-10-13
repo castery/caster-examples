@@ -1,9 +1,7 @@
-'use strict';
-
 const { Caster } = require('@castery/caster');
 const { VKPlatform } = require('@castery/caster-vk');
 
-const bot = new Caster;
+const bot = new Caster();
 const platform = new VKPlatform({
 	isGroup: true,
 	adapter: {
@@ -11,15 +9,17 @@ const platform = new VKPlatform({
 	}
 });
 
+const sessions = new Map();
+
 bot.use(platform);
 
 bot.start()
-.then(() => {
-	console.log('Bot started!');
-})
-.catch((error) => {
-	console.error('Error starting bot!', error);
-});
+	.then(() => {
+		console.log('Bot started!');
+	})
+	.catch((error) => {
+		console.error('Error starting bot!', error);
+	});
 
 bot.incoming.use({
 	name: 'raw-logger',
@@ -36,7 +36,9 @@ bot.outcoming.use({
 
 	async handler(context, next) {
 		if (context.type !== 'message') {
-			return await next();
+			await next();
+
+			return;
 		}
 
 		if (!context.text) {
@@ -48,8 +50,6 @@ bot.outcoming.use({
 		await next();
 	}
 });
-
-const sessions = new Map;
 
 bot.incoming.use({
 	name: 'user-session',
